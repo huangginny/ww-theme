@@ -38,10 +38,28 @@
 			<div class="collapse navbar-collapse" id="op-header-navbar">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item">
+						<a class="nav-link" href="#">JK罗琳</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">哈利波特</a>
+					</li>
+					<li class="nav-item">
 						<a class="nav-link" href="#">神奇动物</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#">倒霉孩子</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Strike系列</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">霍格沃茨毕业生</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">周边活动</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Things we love</a>
 					</li>
 				</ul>
 			</div>

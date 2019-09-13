@@ -9,7 +9,7 @@
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="row d-flex justify-content-center" style="padding:50px 0;margin-top:-20px;z-index:100">
+	<div class="row d-flex <?php if( is_singular()) { echo 'justify-content-center'; } ?>" style="padding:50px 0;margin-top:-20px;z-index:100">
 		<header class="entry-header">
 			<?php
 			if ( is_singular() ) :
@@ -19,13 +19,15 @@
 			endif;
 
 			if ( 'post' === get_post_type() ) :
-				?>
-				<div class="entry-meta">
+			?>
+				<div class="entry-meta <?php if( is_singular()) { echo 'center'; } ?>">
 					<?php
 					ww_theme_posted();
 					?>
 				</div><!-- .entry-meta -->
-			<?php endif; ?>
+			<?php 
+			endif;
+			?>
 		</header><!-- .entry-header -->
 	</div>
 
@@ -33,18 +35,22 @@
 	<div class="row">
 		<div class="entry-content">
 			<?php
-			the_content( sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'ww-theme' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			) );
+			if ( is_singular() ) {
+				the_content( sprintf(
+					wp_kses(
+						/* translators: %s: Name of current post. Only visible to screen readers */
+						__( '阅读全文 <span class="screen-reader-text"> "%s"</span>', 'ww-theme' ),
+						array(
+							'span' => array(
+								'class' => array(),
+							),
+						)
+					),
+					get_the_title()
+				) );
+			} else {
+				the_excerpt('');
+			}
 
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ww-theme' ),

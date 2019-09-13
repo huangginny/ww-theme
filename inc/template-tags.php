@@ -37,7 +37,7 @@ if ( ! function_exists( 'ww_theme_entry_footer' ) ) :
 				sprintf(
 					wp_kses(
 						/* translators: %s: post title */
-						/*__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'ww-theme' ),
+						/*__( '请评论 <span class="screen-reader-text">%s</span>', 'ww-theme' ),
 						array(
 							'span' => array(
 								'class' => array(),
@@ -54,7 +54,7 @@ if ( ! function_exists( 'ww_theme_entry_footer' ) ) :
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'ww-theme' ),
+					__( '编辑 <span class="screen-reader-text">%s</span>', 'ww-theme' ),
 					array(
 						'span' => array(
 							'class' => array(),

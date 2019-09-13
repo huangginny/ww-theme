@@ -60,6 +60,15 @@ h2 {
 	margin: 11px 0;
 }
 
+h2 a {
+	color: black;
+}
+
+h2 a:hover {
+	color: black;
+	text-decoration: underline;
+}
+
 /* Grouping content
 	 ========================================================================== */
 
@@ -474,9 +483,9 @@ html {
 }
 
 body {
-	background: #fff;
+	background: #efe5d5;
 	/* Fallback for when there is no custom background color defined. */
-	background-image: url('./images/dh.png');
+	background-image: url('./images/logo-background.png');
 }
 
 hr {
@@ -690,9 +699,9 @@ a:hover {
 	margin-top: 90px;
 	padding-left: 50px;
 	padding-right: 50px;
+	padding-bottom: 50px;
 	min-height: -webkit-calc(100vh - 243px);
 	background-color: white;
-	opacity: 0.9;
 }
 /*--------------------------------------------------------------
 ## Footer
@@ -706,4 +715,22 @@ a:hover {
 	color: white;
 	font-size: 10pt;
 	padding-top: 15px;
+}
+
+.site-footer a {
+	color: white;
+}
+
+.site-footer a:hover {
+	color: #666666;
+	text-decoration: underline;
+}
+/*--------------------------------------------------------------
+## Entry
+--------------------------------------------------------------*/
+.entry-header .h1 {
+	text-align: center;
+}
+.entry-header .center {
+	text-align: center;
 }
