@@ -14,9 +14,11 @@
 	</div><!-- #content -->
 	</div>
 	<footer class="site-footer container-fluid">
-		<p class="text-center"><a href="">关于我们</a> | <a href="">使用条款</a></p>
+		<p class="text-center">
+			<a href="https://www.wizardingwireless.com/about-us/">关于我们</a> | <a href="https://www.wizardingwireless.com/privacy-policy/">隐私政策</a>
+		</p>
 		<hr style="opacity:0.5;width:39%"/>
-		<p class="text-center">@2019-<?php bloginfo( 'name' ); ?> | <?php
+		<p class="text-center">@2020-<?php bloginfo( 'name' ); ?> | <?php
 			/* translators: %s: CMS name, i.e. WordPress. */
 			printf( esc_html__( 'Proudly powered by %s', 'ww-theme' ), 'WordPress' );
 			?>

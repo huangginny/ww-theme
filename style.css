@@ -1,9 +1,9 @@
 /*!
 Theme Name: 巫师电台
-Theme URI: http://www.wizardingwireless.com/
+Theme URI: https://www.wizardingwireless.com/
 Author: Ginny Huang
-Author URI: http://www.ginsterrific.com/
-Description: 打造最佛系的专业平台
+Author URI: https://www.ginsterrific.com/
+Description: 巫师电台是国内唯一关于J.K罗琳打造的魔法世界的一切，及其他罗琳作品为主题内容的中文网站。网站通过图文，视频等多种方式为魔法世界爱好者提供最新的新闻资讯和相关内容。
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
@@ -43,6 +43,11 @@ html {
 
 body {
 	margin: 0;
+	min-height: 100vh;
+}
+
+#page {
+	min-height: 100vh;
 }
 
 /**
@@ -486,6 +491,7 @@ body {
 	background: #efe5d5;
 	/* Fallback for when there is no custom background color defined. */
 	background-image: url('./images/logo-background.png');
+	background-blend-mode: exclusion;
 }
 
 hr {
@@ -539,7 +545,7 @@ table {
 }
 
 .container {
-	width: 1000px;
+	max-width: 1000px;
 }
 
 /*--------------------------------------------------------------
@@ -697,11 +703,13 @@ a:hover {
 --------------------------------------------------------------*/
 .site-container {
 	margin-top: 90px;
+	margin-bottom: 120px;
 	padding-left: 50px;
 	padding-right: 50px;
 	padding-bottom: 50px;
-	min-height: -webkit-calc(100vh - 243px);
+	min-height: calc(100vh - 352px);
 	background-color: white;
+	opacity: 0.8;
 }
 /*--------------------------------------------------------------
 ## Footer
@@ -711,6 +719,7 @@ a:hover {
 	opacity: 0.7;
 	background-color: #191919;
 	position: static;
+	height: 120px;
 	bottom: 0px;
 	color: white;
 	font-size: 10pt;

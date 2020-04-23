@@ -49,8 +49,9 @@ get_header();
 
 		else :
 
-			get_template_part( 'template-parts/content', 'none' );
-
+			?>
+			<h2>该页没有文章</h2>
+		<?php
 		endif;
 		?>
 
