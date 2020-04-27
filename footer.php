@@ -15,7 +15,7 @@
 	</div>
 	<footer class="site-footer container-fluid">
 		<p class="text-center">
-			<a href="https://www.wizardingwireless.com/about-us/">关于我们</a> | <a href="https://www.wizardingwireless.com/privacy-policy/">隐私政策</a>
+			<a href="/about-us/">关于我们</a> | <a href="/privacy-policy/">隐私政策</a>
 		</p>
 		<hr style="opacity:0.5;width:39%"/>
 		<p class="text-center">@2020-<?php bloginfo( 'name' ); ?> | <?php

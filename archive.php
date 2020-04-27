@@ -50,7 +50,9 @@ get_header();
 		else :
 
 			?>
-			<h2>该页没有文章</h2>
+			<h1 class="special-page-header">页面尚未开通</h1>
+			<p>本站暂时无法进入霍格沃茨禁书区，请耐心等待管理员拿到霍格沃茨教授的亲笔签名，多谢！</p>
+			<img src="<?php echo get_template_directory_uri()?>/images/restricted-section.jpg">
 		<?php
 		endif;
 		?>

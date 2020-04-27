@@ -75,23 +75,33 @@ h2 a:hover {
 	text-decoration: underline;
 }
 
+.special-page-header {
+	text-align: center;
+    padding: 10pt;
+}
+
+.page h2:before,
+.page h3:before,
 .single-post h2:before,
 .single-post h3:before {
     content: "";
     display: inline-block;
-    width: 30pt;
     background-image: url(./images/logo-white.jpg);
     background-repeat: no-repeat;
 }
 
+.page h2:before,
 .single-post h2:before {
     background-size: 18pt 18pt;
     height: 18pt;
+	width: 30pt;
 }
 
+.page h3:before,
 .single-post h3:before {
     background-size: 1rem 1rem;
     height: 1rem;
+	width: 1.6rem;
 }
 
 h3, h4, h5, h6 {
