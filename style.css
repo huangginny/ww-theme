@@ -395,7 +395,7 @@ template {
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
-	margin: 0 0 1.5em;
+	margin: 0px -15px 1.5em;
 	overflow: hidden;
 }
 
@@ -404,6 +404,7 @@ template {
 .post-navigation .nav-previous {
 	float: left;
 	width: 50%;
+	font-weight: bold;
 }
 
 .comment-navigation .nav-next,
@@ -412,6 +413,11 @@ template {
 	float: right;
 	text-align: right;
 	width: 50%;
+	font-weight: bold;
+}
+
+.screen-reader-text {
+	display: none;
 }
 
 /*--------------------------------------------------------------
