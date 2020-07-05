@@ -31,34 +31,40 @@
 		</header><!-- .entry-header -->
 	</div>
 
-	<?php ww_theme_post_thumbnail(); ?>
-	<div class="row">
-		<div class="entry-content">
-			<?php
-			if ( is_singular() ) {
-				the_content( sprintf(
-					wp_kses(
-						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( '阅读全文 <span class="screen-reader-text"> "%s"</span>', 'ww-theme' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					get_the_title()
-				) );
-			} else {
-				the_excerpt('');
-			}
-
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ww-theme' ),
-				'after'  => '</div>',
+	<div class="row entry-content">
+		<?php
+		if ( is_singular() ) {
+			the_content( sprintf(
+				wp_kses(
+					/* translators: %s: Name of current post. Only visible to screen readers */
+					__( '阅读全文 <span class="screen-reader-text"> "%s"</span>', 'ww-theme' ),
+					array(
+						'span' => array(
+							'class' => array(),
+						),
+					)
+				),
+				get_the_title()
 			) );
-			?>
-		</div><!-- .entry-content -->
-	</div>
+		} else { ?>
+		<div class='d-none d-md-block' width='150px'>
+			<?php ww_theme_post_thumbnail('thumbnail'); ?>
+		</div>
+		<div class='d-none d-md-block col'>
+			<?php the_excerpt(''); ?>
+		</div>
+		<div class='d-sm-block d-md-none'>
+			<?php ww_theme_post_thumbnail('medium'); ?>
+		</div>
+		<?php
+			   }
+
+		wp_link_pages( array(
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ww-theme' ),
+			'after'  => '</div>',
+		) );
+		?>
+	</div><!-- .entry-content -->
 	<div class="row">
 		<footer class="entry-footer">
 			<?php ww_theme_entry_footer(); ?>
