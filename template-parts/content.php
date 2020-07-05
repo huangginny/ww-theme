@@ -9,7 +9,7 @@
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="row d-flex <?php if( is_singular()) { echo 'justify-content-center'; } ?>" style="padding:50px 0;margin-top:-20px;z-index:100">
+	<div class="row d-flex <?php if( is_singular()) { echo 'justify-content-center'; } ?>" style="padding-top:50px;padding-bottom:25px;margin-top:-20px;z-index:100">
 		<header class="entry-header">
 			<?php
 			if ( is_singular() ) :
@@ -31,9 +31,11 @@
 		</header><!-- .entry-header -->
 	</div>
 
-	<div class="row entry-content">
 		<?php
 		if ( is_singular() ) {
+		?>
+		<div class="entry-content">
+		<?php
 			the_content( sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
@@ -46,25 +48,27 @@
 				),
 				get_the_title()
 			) );
+		?>	</div><!-- .entry-content --> <?php
 		} else { ?>
-		<div class='d-none d-md-block' width='150px'>
-			<?php ww_theme_post_thumbnail('thumbnail'); ?>
-		</div>
-		<div class='d-none d-md-block col'>
-			<?php the_excerpt(''); ?>
-		</div>
-		<div class='d-sm-block d-md-none'>
-			<?php ww_theme_post_thumbnail('medium'); ?>
+		<div class='row'>
+			<div class='d-none d-md-block' width='150px'>
+				<?php ww_theme_post_thumbnail('thumbnail'); ?>
+			</div>
+			<div class='d-none d-md-block col'>
+				<?php the_excerpt(''); ?>
+			</div>
+			<div class='d-sm-block d-md-none'>
+				<?php ww_theme_post_thumbnail('medium'); ?>
+			</div>
 		</div>
 		<?php
-			   }
+		}
 
 		wp_link_pages( array(
 			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ww-theme' ),
 			'after'  => '</div>',
 		) );
 		?>
-	</div><!-- .entry-content -->
 	<div class="row">
 		<footer class="entry-footer">
 			<?php ww_theme_entry_footer(); ?>
