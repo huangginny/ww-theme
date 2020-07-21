@@ -29,7 +29,10 @@
 	<a href="#content"><?php esc_html_e( 'Skip to content', 'ww-theme' ); ?></a>
 
 	<header id="masthead" class="site-header container-fluid">
-		<?php if (!( is_front_page() && is_home() )) : ?>
+		<?php 
+		if (!( is_front_page() && is_home() )) : 
+			$term_name = single_term_title('', false);
+		?>
 		<nav class="main-navbar navbar navbar-dark navbar-expand-lg fixed-top" style="background-color:#191919">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php the_custom_logo(); ?></a>
 			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#op-header-navbar" aria-controls="op-header-navbar" aria-expanded="false">
@@ -37,28 +40,28 @@
 			</button>
 			<div class="collapse navbar-collapse" id="op-header-navbar">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item">
+					<li class="nav-item <?php if ($term_name == 'jkrowling') { echo 'active'; } ?>">
 						<a class="nav-link" href="/jkrowling">JK罗琳</a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item <?php if ($term_name == 'harrypotter') { echo 'active'; } ?>">
 						<a class="nav-link" href="/harrypotter">哈利波特</a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item <?php if ($term_name == 'fantasticbeasts') { echo 'active'; } ?>">
 						<a class="nav-link" href="/fantasticbeasts">神奇动物</a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item <?php if ($term_name == 'cursedchild') { echo 'active'; } ?>">
 						<a class="nav-link" href="/cursedchild">倒霉孩子</a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item <?php if ($term_name == 'strike') { echo 'active'; } ?>">
 						<a class="nav-link" href="/strike">Strike系列</a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item <?php if ($term_name == 'alumni') { echo 'active'; } ?>">
 						<a class="nav-link" href="/alumni">霍格沃茨毕业生</a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item <?php if ($term_name == 'activities') { echo 'active'; } ?>">
 						<a class="nav-link" href="/activities">周边活动</a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item <?php if ($term_name == 'thingswelove') { echo 'active'; } ?>">
 						<a class="nav-link" href="/thingswelove">Things We Love</a>
 					</li>
 				</ul>
