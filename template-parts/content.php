@@ -9,26 +9,23 @@
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="row d-flex <?php if( is_singular()) { echo 'justify-content-center'; } ?>" style="padding-top:50px;padding-bottom:25px;margin-top:-20px;z-index:100">
-		<header class="entry-header">
+	<div class="row d-flex <?php if( is_singular()) { echo 'justify-content-center'; } ?>" style="padding-bottom:25px;margin-top:-20px;z-index:100;<?php if( is_singular()) { echo 'padding-top:50px;'; } ?>">
 			<?php
 			if ( is_singular() ) :
+				echo '<header class="entry-header">';
 				the_title( '<h1 class="entry-title">', '</h1>' );
-			else :
-				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			endif;
-
-			if ( 'post' === get_post_type() ) :
-			?>
-				<div class="entry-meta <?php if( is_singular()) { echo 'center'; } ?>">
-					<?php
-					ww_theme_posted();
-					?>
-				</div><!-- .entry-meta -->
-			<?php 
+				if ( 'post' === get_post_type() ) :
+				?>
+					<div class="entry-meta center">
+						<?php
+						ww_theme_posted();
+						?>
+					</div><!-- .entry-meta -->
+				<?php 
+				endif;
+				echo '</header><!-- .entry-header -->';
 			endif;
 			?>
-		</header><!-- .entry-header -->
 	</div>
 
 		<?php
@@ -50,14 +47,25 @@
 			) );
 		?>	</div><!-- .entry-content --> <?php
 		} else { ?>
-		<div class='row'>
-			<div class='d-none d-md-block' width='150px'>
-				<?php ww_theme_post_thumbnail('thumbnail'); ?>
+		<div class='d-none d-md-flex flex-row' style='position:relative'>
+			<div class='archive-thumbnail'>
+				<?php ww_theme_post_thumbnail('medium'); ?>
 			</div>
-			<div class='d-none d-md-block col'>
-				<?php the_excerpt(''); ?>
+			<div class='archive-excerpt col' style='margin-left:200px;padding-left: 30px;'>
+				<?php 
+				the_title( '<h1 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' ); ?>
+				<div class="entry-meta">
+					<?php ww_theme_posted(); ?>
+				</div>
+				<?php the_excerpt('');?>
 			</div>
-			<div class='d-sm-block d-md-none'>
+		</div>
+		<div class='d-sm-flex d-md-none' style='text-align: center;padding-bottom:1em;'>
+			<div class='flex-row' style='padding-bottom:1em;'>
+				<?php 
+				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
+			</div>
+			<div class='flex-row'>
 				<?php ww_theme_post_thumbnail('medium'); ?>
 			</div>
 		</div>

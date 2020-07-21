@@ -5,7 +5,7 @@ GitHub Theme URI: huangginny/ww-theme
 Author: Ginny Huang
 Author URI: https://www.ginsterrific.com/
 Description: 巫师电台是国内唯一关于J.K罗琳打造的魔法世界的一切，及其他罗琳作品为主题内容的中文网站。网站通过图文，视频等多种方式为魔法世界爱好者提供最新的新闻资讯和相关内容。
-Version: 0.0.8
+Version: 0.0.9
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: ww-theme
@@ -757,6 +757,20 @@ a:hover {
 	height: 100px !important;
 	overflow-y: hidden !important;
 }
+.nav-item {
+	transition-duration: 0.5s;
+}
+.nav-item.active {
+	font-size: 1.2em;
+	font-weight: normal;
+	color: white;
+}
+.nav-item:hover {
+	font-size: 1.2em;
+}
+.nav-item.active:hover {
+	font-weight: bold;
+}
 @media only screen and (max-width: 992px) {
 	.main-navbar {
 		background-color: #191919;
@@ -806,7 +820,38 @@ a:hover {
 	color: #666666;
 	text-decoration: underline;
 }
+/*--------------------------------------------------------------
+## Archive
+--------------------------------------------------------------*/
+.archive-thumbnail {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    position: absolute;
+    align-items: center;
+	align-self: center;
+    display: flex;
+}
+.archive-excerpt .entry-meta {
+	font-size: small;
+    color: dimgray;
+    padding-bottom: 1em;
+	text-align: center;
+}
+.archive-excerpt h1 {
+	font-family: STKaiti;
+	font-weight: bolder;
+	text-align: center;
+}
 
+.archive-excerpt h1 a {
+	color: black;
+}
+
+.archive-excerpt h1 a:hover {
+	color: black;
+	text-decoration: underline;
+}
 /*--------------------------------------------------------------
 ## Entry
 --------------------------------------------------------------*/
@@ -865,12 +910,15 @@ a:hover {
 	text-shadow: 0px 0px 15px lightgray;
 }
 #homepage-latest-post-content a {
+	font-size: 1em;
 	color: #191919;
 	z-index: 2;
+	transition-duration: 0.7s;
 }
 #homepage-latest-post-content a:hover {
-	color: dimgray;
+	font-size: 1.5em;
 	text-decoration: underline;
+	transition-duration: 0.7s;
 }
 
 #homepage-latest-post-content p {
