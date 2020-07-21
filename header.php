@@ -40,22 +40,22 @@
 			</button>
 			<div class="collapse navbar-collapse" id="op-header-navbar">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item <?php if ($term_name == 'jkrowling') { echo 'active'; } ?>">
+					<li class="nav-item <?php if ($term_name == 'JK罗琳') { echo 'active'; } ?>">
 						<a class="nav-link" href="/jkrowling">JK罗琳</a>
 					</li>
-					<li class="nav-item <?php if ($term_name == 'harrypotter') { echo 'active'; } ?>">
+					<li class="nav-item <?php if ($term_name == '哈利波特') { echo 'active'; } ?>">
 						<a class="nav-link" href="/harrypotter">哈利波特</a>
 					</li>
-					<li class="nav-item <?php if ($term_name == 'fantasticbeasts') { echo 'active'; } ?>">
+					<li class="nav-item <?php if ($term_name == '神奇动物') { echo 'active'; } ?>">
 						<a class="nav-link" href="/fantasticbeasts">神奇动物</a>
 					</li>
-					<li class="nav-item <?php if ($term_name == 'cursedchild') { echo 'active'; } ?>">
+					<li class="nav-item <?php if ($term_name == '倒霉孩子') { echo 'active'; } ?>">
 						<a class="nav-link" href="/cursedchild">倒霉孩子</a>
 					</li>
-					<li class="nav-item <?php if ($term_name == 'strike') { echo 'active'; } ?>">
+					<li class="nav-item <?php if ($term_name == 'Strike系列') { echo 'active'; } ?>">
 						<a class="nav-link" href="/strike">Strike系列</a>
 					</li>
-					<li class="nav-item <?php if ($term_name == 'alumni') { echo 'active'; } ?>">
+					<li class="nav-item <?php if ($term_name == '霍格沃茨毕业生') { echo 'active'; } ?>">
 						<a class="nav-link" href="/alumni">霍格沃茨毕业生</a>
 					</li>
 					<li class="nav-item <?php if ($term_name == 'activities') { echo 'active'; } ?>">
