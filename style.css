@@ -5,7 +5,7 @@ GitHub Theme URI: huangginny/ww-theme
 Author: Ginny Huang
 Author URI: https://www.ginsterrific.com/
 Description: 巫师电台是国内唯一关于J.K罗琳打造的魔法世界的一切，及其他罗琳作品为主题内容的中文网站。网站通过图文，视频等多种方式为魔法世界爱好者提供最新的新闻资讯和相关内容。
-Version: 0.0.6
+Version: 0.0.7
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: ww-theme
@@ -822,16 +822,27 @@ a:hover {
 --------------------------------------------------------------*/
 #homepage-latest-post {
 	position: relative;
-	margin-top: 60px;
+	
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
 	border-radius: 50px;
 	box-shadow: 0 0 15px 3px dimgrey;
 	width: 90%;
-	min-height: calc(100vh - 106px); /** gives 20px margin bottom */
 	margin-left: 5%;
 	z-index: -1;
+}
+@media only screen and (max-width: 992px) {
+	#homepage-latest-post {
+		min-height: calc(100vh - 146px); /** gives 20px margin bottom */
+		margin-top: 100px;
+	}
+}
+@media only screen and (min-width: 992px) {
+	#homepage-latest-post {
+		min-height: calc(100vh - 106px); /** gives 20px margin bottom */
+		margin-top: 60px;
+	}
 }
 
 #homepage-latest-post-content {
