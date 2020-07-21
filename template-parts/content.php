@@ -47,7 +47,7 @@
 			) );
 		?>	</div><!-- .entry-content --> <?php
 		} else { ?>
-		<div class='d-none d-md-flex flex-row' style='position:relative'>
+		<div class='d-none d-md-flex flex-row' style='position:relative;padding-bottom:2em;'>
 			<div class='archive-thumbnail'>
 				<?php ww_theme_post_thumbnail('medium'); ?>
 			</div>
