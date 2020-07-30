@@ -5,7 +5,7 @@ GitHub Theme URI: huangginny/ww-theme
 Author: Ginny Huang
 Author URI: https://www.ginsterrific.com/
 Description: 巫师电台是国内唯一关于J.K罗琳打造的魔法世界的一切，及其他罗琳作品为主题内容的中文网站。网站通过图文，视频等多种方式为魔法世界爱好者提供最新的新闻资讯和相关内容。
-Version: 0.0.12
+Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: ww-theme
@@ -459,8 +459,26 @@ template {
 	width: 100%;
 }
 
-.custom-logo-link, .custom-logo {
+.custom-logo-link, .custom-logo, .custom-logo-svg image {
 	transition: 0.5s;
+}
+
+.custom-logo-link {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.custom-logo-svg {
+	height: 105px;
+	width: 290px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 5px;
+}
+
+.custom-logo-svg image {
+	width: 233px; 
+	height: 76px;
 }
 
 /*--------------------------------------------------------------
@@ -549,8 +567,8 @@ html {
 body {
 	background-color: #efe5d5;
 	/* Fallback for when there is no custom background color defined. */
-	background-image: url('./images/logo-background.png');
 	background-blend-mode: exclusion;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='250px' height='250px'%3E%3Cimage x='0px' y='0px' width='146px' height='147px' xlink:href='data:img/png;base64,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' /%3E%3C/svg%3E");
 }
 
 hr {
@@ -778,7 +796,7 @@ a:hover {
 }
 @media only screen and (min-width: 992px) {
 	.main-navbar {
-		font-size: 0.95em;
+		font-size: 0.9em;
 		padding: 0;
 		background-image: linear-gradient(to bottom, #191919, transparent);
 	}
@@ -880,13 +898,13 @@ a:hover {
 @media only screen and (max-width: 992px) {
 	#homepage-latest-post {
 		min-height: calc(100vh - 146px); /** gives 20px margin bottom */
-		margin-top: 100px;
+		margin-top: 130px;
 	}
 }
 @media only screen and (min-width: 992px) {
 	#homepage-latest-post {
 		min-height: calc(100vh - 106px); /** gives 20px margin bottom */
-		margin-top: 60px;
+		margin-top: 90px;
 	}
 }
 

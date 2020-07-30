@@ -3,22 +3,32 @@
  */
 window.onscroll = function() {
  	var customLogoLinks = document.getElementsByClassName("custom-logo-link");
- 	var logoImgs = document.getElementsByClassName("custom-logo");
- 	if (customLogoLinks.length == 0 || logoImgs.length == 0) {
+ 	var logoSvgs = document.getElementsByClassName("custom-logo");
+	
+ 	if (customLogoLinks.length == 0 || logoSvgs.length == 0) {
  		return;
  	}
  	var link = customLogoLinks[0];
- 	var img = logoImgs[0]
+ 	var svg = logoSvgs[0];
+	if (svg.children.length == 0) {
+		return;
+	}
+	var img = svg.children[0];
+	
  	if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
  		// scrolled down
- 		link.style.height = "4em";
- 		img.style.height = "4em";
- 		img.style.width = "10em";
+ 		link.style.height = "55px";
+ 		svg.style.height = "55px";
+ 		svg.style.width = "165px";
+		img.style.height = "38px";
+		img.style.width = "117px";
  	} else {
  		// scrolled up
- 		link.style.height = "100px";
- 		img.style.height = "100px";
- 		img.style.width = "250px";
+ 		link.style.height = "105px";
+ 		svg.style.height = "105px";
+ 		svg.style.width = "290px";
+		img.style.height = "76px";
+		img.style.width = "233px";
  	}
 };
 
