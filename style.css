@@ -5,7 +5,7 @@ GitHub Theme URI: huangginny/ww-theme
 Author: Ginny Huang
 Author URI: https://www.ginsterrific.com/
 Description: 巫师电台是国内唯一关于J.K罗琳打造的魔法世界的一切，及其他罗琳作品为主题内容的中文网站。网站通过图文，视频等多种方式为魔法世界爱好者提供最新的新闻资讯和相关内容。
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: ww-theme
@@ -67,7 +67,7 @@ h1 {
 h2 {
 	font-size: 18pt;
 	margin: 14px 0;
-	font-family: STKaiti;
+	font-family: KaiTi, STKaiti;
 	font-weight: bolder;
 }
 
@@ -81,7 +81,7 @@ h2 a:hover {
 }
 
 h3 {
-	font-family: STKaiti;
+	font-family: KaiTi,STKaiti;
 	font-weight: bold;
 }
 
@@ -778,16 +778,34 @@ a:hover {
 .nav-item {
 	transition-duration: 0.5s;
 }
+.nav-link {
+	color: white;
+}
 .nav-item.active {
 	font-size: 1.2em;
 	font-weight: normal;
-	color: white;
 }
 .nav-item:hover {
 	font-size: 1.2em;
 }
+.nav-item:hover .nav-link {
+	color: lightgray;
+}
 .nav-item.active:hover {
 	font-weight: bold;
+}
+.nav-item.active:hover .nav-link {
+	color: white;
+}
+.navbar-toggler {
+    color: lightgray;
+    border-color: lightgray;
+}
+.navbar-toggler:focus {
+    outline:none !important;
+}
+.navbar-toggler-icon {
+	background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='lightgray' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 @media only screen and (max-width: 992px) {
 	.main-navbar {
@@ -857,7 +875,7 @@ a:hover {
 	text-align: center;
 }
 .archive-excerpt h1 {
-	font-family: STKaiti;
+	font-family: KaiTi,STKaiti;
 	font-weight: bolder;
 	text-align: center;
 }
@@ -909,7 +927,7 @@ a:hover {
 }
 
 #homepage-latest-post-content {
-	background-image: linear-gradient(to top, white 40%, transparent);
+	background-image: linear-gradient(to top, white 62%, transparent);
 	bottom: 0;
     position: absolute;
 	width: 100%;
@@ -919,13 +937,24 @@ a:hover {
 }
 
 #homepage-latest-post-content h1 {
-	font-size: 3em;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     padding-left: 25px;
 	padding-right: 25px;
 	text-shadow: 0px 0px 15px lightgray;
+	transition-duration: 0.7s;
+	width: 90%;
+}
+@media only screen and (max-width: 992px) {
+	#homepage-latest-post-content h1 {
+		font-size: 2.5em;
+	}
+}
+@media only screen and (min-width: 992px) {
+	#homepage-latest-post-content h1 {
+		font-size: 3em;
+	}
 }
 #homepage-latest-post-content a {
 	font-size: 1em;
@@ -933,8 +962,14 @@ a:hover {
 	z-index: 2;
 	transition-duration: 0.7s;
 }
-#homepage-latest-post-content a:hover {
-	font-size: 1.5em;
+
+#homepage-latest-post-content:hover h1 {
+	width: 100%;
+	transition-duration: 0.7s;
+}
+
+#homepage-latest-post-content:hover a {
+	font-size: 1.1em;
 	text-decoration: underline;
 	transition-duration: 0.7s;
 }

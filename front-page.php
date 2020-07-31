@@ -17,7 +17,7 @@
 <body <?php body_class(); ?> style='background-color: #191919;background-image: none'>
 <div id="page" class="site">
 	<header id="masthead" class="site-header container-fluid">
-		<nav id='front-page-nav' class="main-navbar navbar navbar-dark navbar-expand-lg fixed-top">
+		<nav id='front-page-nav' class="main-navbar navbar navbar-expand-lg fixed-top">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="custom-logo-link">
 					<!-- logo svg -->
 					<svg 
@@ -65,7 +65,7 @@
 <?php
 // the query
 $query = new WP_Query( array(
-  'posts_per_page' => 7,
+  'posts_per_page' => 5,
 )); 
 
 if ( $query->have_posts() ) {
@@ -74,7 +74,7 @@ if ( $query->have_posts() ) {
 
 	echo '<div id="homepage-latest-post" style="background-image: url(\''.esc_url($featured_img_url).'\')">';
 	the_title( '<div id="homepage-latest-post-content"><h1><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
-	echo '<p>'.get_the_excerpt().'</p></div>';
+	echo '<p class="d-none d-sm-block">'.get_the_excerpt().'</p></div>';
 	echo '</div>';
 } ?>
 <!-- First post on main page -->
@@ -97,7 +97,8 @@ if ( $query->have_posts() ) {
  
         $query->the_post();
 ?>		
-		<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 <?php if($first_in_list) { echo 'active'; } ?>">
+		<div class="col-12 col-sm-6 col-md-4 col-lg-3 <?php if($first_in_list) { echo 'active'; } ?>">
+			<!-- put carousel-item back in class when there are more posts -->
 			<a href="<?php echo esc_url( get_permalink() ) ?>" rel="bookmark">
 				<div class="carousel-item-post">
 					<div class="carousel-image">

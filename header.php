@@ -33,7 +33,7 @@
 		if (!( is_front_page() && is_home() )) : 
 			$term_name = single_term_title('', false);
 		?>
-		<nav class="main-navbar navbar navbar-dark navbar-expand-lg fixed-top" style="background-color:#191919">
+		<nav class="main-navbar navbar navbar-expand-lg fixed-top" style="background-color:#191919">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="custom-logo-link">
 					<!-- logo svg -->
 					<svg 
