@@ -39,14 +39,13 @@ if ( post_password_required() ) {
 
 		<?php the_comments_navigation(); ?>
 
-		<ol class="comment-list">
+		<ul class="comment-list" style='list-style: none'>
 			<?php
 			wp_list_comments( array(
-				'style'      => 'ol',
 				'short_ping' => true,
 			) );
 			?>
-		</ol><!-- .comment-list -->
+		</ul><!-- .comment-list -->
 
 		<?php the_comments_navigation(); 
 
