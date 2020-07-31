@@ -927,7 +927,7 @@ a:hover {
 }
 
 #homepage-latest-post-content {
-	background-image: linear-gradient(to top, linear-gradient(to top, rgba(255,255,255,0.9) 62%, transparent) 62%, transparent);
+	background-image: linear-gradient(to top, rgba(255,255,255,0.9) 62%, transparent);
 	bottom: 0;
     position: absolute;
 	width: 100%;
