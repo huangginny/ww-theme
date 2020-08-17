@@ -2,6 +2,7 @@
  * Scroll to resize header
  */
 window.onscroll = function() {
+	if (window.screen.width < 378){ return; }
  	var customLogoLinks = document.getElementsByClassName("custom-logo-link");
  	var logoSvgs = document.getElementsByClassName("custom-logo");
 	
