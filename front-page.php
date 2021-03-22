@@ -95,11 +95,12 @@ if ( have_posts() ) {
 		<div class="d-flex justify-content-center carousel-inner row w-100 mx-auto" role="listbox">
 	<?php 
 		}
-		$remainder = $total_posts % 4;
-		$widen = $remainder < 3 && $count_post > ($total_posts - 1 - $remainder);
+
 		$classname_mid = 'col-sm-6';
 		$classname_large = 'col-md-3';
-		if ($widen) {
+
+		$remainder = $total_posts % 4;
+		if ($count_post > ($total_posts - 1 - $remainder)) {
 			if ($remainder == 1) {
 				$classname_mid = 'col-sm-12';
 				$classname_large = 'col-md-12';
