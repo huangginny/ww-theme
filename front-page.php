@@ -63,13 +63,9 @@
 <!-- ############################ END COPIED FROM header.php ############################ -->
 
 <?php
-// the query
-$query = new WP_Query( array(
-  'posts_per_page' => 5,
-)); 
 
-if ( $query->have_posts() ) {
-	$query->the_post();
+if ( have_posts() ) {
+	the_post();
 	$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');
 
 	echo '<div id="homepage-latest-post" style="background-image: url(\''.esc_url($featured_img_url).'\')">';
@@ -82,28 +78,33 @@ if ( $query->have_posts() ) {
 
 <!-- Loop the next couple of posts-->
 <?php
-if ( $query->have_posts() ) {
+if ( have_posts() ) {
 ?>
-<p style='text-align:center;color:white;padding: 50px;'>
-	· · · · · · ·
-</p>
 <div class="container-fluid">
-	<div id="carouselHomepage">
-    <!--<div id="carouselHomepage" class="carousel slide" data-ride="carousel">-->
-		<div class="d-flex justify-content-center carousel-inner row w-100 mx-auto" role="listbox"><!-- d-flex justify-content-center should be removed in carousel mode -->
 <?php
-	$first_in_list = true;
-	while ( $query->have_posts() ) {
- 
-        $query->the_post();
-?>		
-		<div class="col-12 col-sm-6 col-md-4 col-lg-3 <?php if($first_in_list) { echo 'active'; } ?>">
+	$total_posts = wp_count_posts('post')->publish - 1;
+	$count_post = 0;
+	while ( have_posts() ) {
+        the_post();
+		if ($count_post % 8 == 0) {
+?>
+	<p style='text-align:center;color:white;padding: 50px;'>
+		· · · · · · ·
+	</p>
+	<div id="carouselHomepage">
+		<div class="d-flex justify-content-center carousel-inner row w-100 mx-auto" role="listbox">
+	<?php 
+		}
+		$remainder = $total_posts % 4;
+		$widen = $remainder < 3 && $count_post > ($total_posts - 1 - $remainder);
+		$classname_large = $widen ? 'col-md-6' : 'col-md-3';
+	?>
+		<div class="col-12 col-sm-6 <?php echo $classname_large ?>" style="margin-top: 10px">
 			<!-- put carousel-item back in class when there are more posts -->
 			<a href="<?php echo esc_url( get_permalink() ) ?>" rel="bookmark">
 				<div class="carousel-item-post">
 					<div class="carousel-image">
 						<?php
-						$first_in_list = false;
 						the_post_thumbnail('medium');
 						?>
 					</div>
@@ -113,17 +114,14 @@ if ( $query->have_posts() ) {
 				</div>
 			</a>
 		</div>
-<?php } ?>
-    </div>
-    <!-- <a class="carousel-control-prev" href="#carouselHomepage" role="button" data-slide="prev">
-        <i class="fa fa-chevron-left fa-lg text-muted"></i>
-        <span class="sr-only">上一页</span>
-    </a>
-    <a class="carousel-control-next text-faded" href="#carouselHomepage" role="button" data-slide="next">
-        <i class="fa fa-chevron-right fa-lg text-muted"></i>
-        <span class="sr-only">下一页</span>
-    </a> -->
-    </div>
+	<?php if ($count_post % 8 == 7 || $count_post == $total_posts - 1) { ?>
+		</div>
+		</div>
+	<?php 
+		}
+	$count_post++;
+	}
+	?>
 </div> 
 <?php } ?>
 
@@ -136,7 +134,7 @@ if ( $query->have_posts() ) {
 		<a href="/about-us/">关于我们</a> | <a href="/privacy-policy/">隐私政策</a>
 	</p>
 	<hr style="opacity:0.5;width:39%"/>
-	<p class="text-center">@2020-<?php bloginfo( 'name' ); ?> | <?php
+	<p class="text-center">@2021-<?php bloginfo( 'name' ); ?> | <?php
 	/* translators: %s: CMS name, i.e. WordPress. */
 	printf( esc_html__( 'Proudly powered by %s', 'ww-theme' ), 'WordPress' );
 		?>
