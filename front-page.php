@@ -147,7 +147,7 @@ if ( have_posts() ) {
 </p>
 <footer class="site-footer container-fluid">
 	<p class="text-center">
-		<a href="/about-us/">关于我们</a> | <a href="/privacy-policy/">隐私政策</a>
+		<a href="/about-us/">关于我们</a> | <a href="/privacy-policy/">隐私政策</a> | <a href="/%e8%bd%ac%e8%bd%bd%e9%a1%bb%e7%9f%a5/">转载须知</a>
 	</p>
 	<hr style="opacity:0.5;width:39%"/>
 	<p class="text-center">@2021-<?php bloginfo( 'name' ); ?> | <?php
