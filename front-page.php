@@ -105,6 +105,12 @@ if ( have_posts() ) {
 				$classname_large = 'col-md-12';
 			} elseif ($remainder == 2) {
 				$classname_large = 'col-md-6';
+			} elseif ($remainder == 3) {
+				if ($count_post == $total_posts - 1) {
+					$classname_mid = 'col-sm-12';
+				} elseif ($count_post == $total_posts - 2) {
+					$classname_large = 'col-md-6';
+				}
 			}
 		}
 	?>
