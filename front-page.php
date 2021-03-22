@@ -97,9 +97,18 @@ if ( have_posts() ) {
 		}
 		$remainder = $total_posts % 4;
 		$widen = $remainder < 3 && $count_post > ($total_posts - 1 - $remainder);
-		$classname_large = $widen ? 'col-md-6' : 'col-md-3';
+		$classname_mid = 'col-sm-6';
+		$classname_large = 'col-md-3';
+		if ($widen) {
+			if ($remainder == 1) {
+				$classname_mid = 'col-sm-12';
+				$classname_large = 'col-md-12';
+			} elseif ($remainder == 2) {
+				$classname_large = 'col-md-6';
+			}
+		}
 	?>
-		<div class="col-12 col-sm-6 <?php echo $classname_large ?>" style="margin-top: 10px">
+		<div class="col-12 <?php echo $classname_mid ?> <?php echo $classname_large ?>" style="margin-top: 10px">
 			<!-- put carousel-item back in class when there are more posts -->
 			<a href="<?php echo esc_url( get_permalink() ) ?>" rel="bookmark">
 				<div class="carousel-item-post">
